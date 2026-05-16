@@ -1,0 +1,6 @@
+{
+  "name": "포스처가드 (PostureGuard)",
+  "description": "AI 자세 감지를 통해 공부 자세를 모니터링하고, 교정 미션을 제공하며 집중력을 관리해주는 스마트 학습 도우미입니다.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["실시간 자세 분석", "뽀모도로 타이머", "학습 통계"]
+}

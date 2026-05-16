@@ -1,0 +1,42 @@
+{
+  "entities": {
+    "user": {
+      "title": "User Profile",
+      "description": "User account information and posture baseline",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "baseline": { "type": "number", "description": "Calibrated posture height baseline" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email"]
+    },
+    "session": {
+      "title": "Study Session",
+      "description": "Statistics for a study session",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "startTime": { "type": "string", "format": "date-time" },
+        "duration": { "type": "number", "description": "Duration in seconds" },
+        "warnings": { "type": "number" },
+        "baseline": { "type": "number" }
+      },
+      "required": ["uid", "startTime"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "user",
+      "description": "Stores user profiles and their posture baselines"
+    },
+    "/users/{userId}/sessions/{sessionId}": {
+      "schema": "session",
+      "description": "History of study sessions for the user"
+    }
+  }
+}
